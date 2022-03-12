@@ -18,7 +18,7 @@ II. Running locally
 * cd tsGqlBackedn
 * yarn
 
-3. Open a new terminal and continually compile the javascript bundle
+3. Open a new terminal and continuously compile the javascript bundle
 * cd tsGqlBackedn
 * yarn watch 
 
