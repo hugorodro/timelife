@@ -10,20 +10,18 @@ I. Architechture
 
 II. Running locally
 
-1. Clone the directory:
-
-2. Start the PostgreSQL database:
+1. If you've already started the PostgreSQL database ignore, if not:
 * cd timelife
 * docker-compose.up
 
-3. Install the necessary packages:
+2. Install the necessary packages:
 * cd tsGqlBackedn
 * yarn
 
-4. Continually compile the javascript bundle
+3. Continually compile the javascript bundle
 * yarn watch 
 
-5. Run the javascript bundle
+4. Run the javascript bundle
 * yarn dev
 
 
