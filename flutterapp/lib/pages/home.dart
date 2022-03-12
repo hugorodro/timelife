@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/helpers/responsive.dart';
+import 'package:flutterapp/widgets/large_screen.dart';
+import 'package:flutterapp/widgets/small_screen.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,21 +11,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.white,
       ),
-      body: Row(
-        children: [
-          Expanded(child: Container(
-            color: Colors.red,
-          )),
-          Expanded(
-            flex: 5,
-            child: Container(
-              color: Colors.blue,
-          ))
-        ],
-      ),
+      body: const ResponsiveWidget(largeScreen: LargeScreen(), mediumScreen: LargeScreen(), smallScreen: SmallScreen(), customScreen: SmallScreen()),
     );
   }
 }
