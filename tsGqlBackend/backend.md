@@ -18,10 +18,12 @@ II. Running locally
 * cd tsGqlBackedn
 * yarn
 
-3. Continually compile the javascript bundle
+3. Open a new terminal and continually compile the javascript bundle
+* cd tsGqlBackedn
 * yarn watch 
 
-4. Run the javascript bundle
+4. Open a new terminal and run the javascript bundle
+* cd tsGqlBackedn
 * yarn dev
 
 
