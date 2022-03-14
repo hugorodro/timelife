@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on: 
   workflow_dispatch:
 jobs:
-  Build and Deploy UI:
+  Build_and_Deploy_UI:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -11,18 +11,24 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       
+      
     - name: Configure AWS credentials 
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::404161153281:role/timelife-github
         aws-region: us-east-1
         
-    - name Build and Deploy UI
-      uses: subosito/flutter-action@v2
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '2.10.3'
+        
+    - name: Build UI for Web
       run: |
-        cd flutterapp
-        flutter --version
         flutter pub get
+        flutter test
         flutter build web
+    
+    - name: Deploy to S3
+      run: |
         aws s3 cp . s3://timelife.dev --recursive
         aws s3 cp . s3://www.timelife.dev --recursive
