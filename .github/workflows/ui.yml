@@ -28,6 +28,7 @@ jobs:
         
     - name: Build UI for Web
       run: |
+        cd flutterapp
         flutter pub get
         flutter test
         flutter build web
