@@ -28,12 +28,13 @@ jobs:
         
     - name: Build UI for Web
       run: |
+        pwd
         cd flutterapp
         flutter pub get
-        flutter test
         flutter build web
     
     - name: Deploy to S3
       run: |
+        pwd
         aws s3 cp . s3://timelife.dev --recursive
         aws s3 cp . s3://www.timelife.dev --recursive
