@@ -1,6 +1,8 @@
 name: Build and Deploy UI
-on: 
-  workflow_dispatch:
+on:
+  push:
+    branches:    
+      - 'main'
 jobs:
   Build_and_Deploy_UI:
     runs-on: ubuntu-latest
